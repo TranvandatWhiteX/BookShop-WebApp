@@ -1,0 +1,324 @@
+<app-header></app-header>
+<section class="mb-4" style="margin-bottom: 50px !important;">
+    <div class="container">
+        <header class="section-heading py-4 d-flex justify-content-between">
+            <h3 class="section-title">Tài khoản của tôi</h3>
+        </header>
+        <div class="row">
+            <aside class="col-md-3 mb-md-0 mb-3">
+                <nav class="list-group">
+                    <a class="list-group-item active" [routerLink]="['/view/account']" routerLinkActive="active"
+                        href=""> Tài khoản </a>
+                    <a class="list-group-item" [routerLink]="['/view/orders']" routerLinkActive="active" href=""> Đơn
+                        hàng của tôi </a>
+                    <a class="list-group-item" [routerLink]="['/view/favorites']" routerLinkActive="active" href=""> Sản
+                        phẩm yêu thích </a>
+                    <a class="list-group-item" [routerLink]="['/view/change-password']" routerLinkActive="active"
+                        href=""> Đổi mật khẩu </a>
+                    <a class="list-group-item" [routerLink]="['/view/info']" routerLinkActive="active" href=""> Thông
+                        tin chung </a>
+                </nav>
+            </aside>
+
+            <main class="col-md-9">
+                @switch (section) {
+                @case ('account') {
+                <article class="card">
+                    <div class="card-body">
+                        <div>
+                            <h5>Trần Văn Đạt</h5>
+                            <p class="fw-bold">0867628073</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <p class="bi bi-map d-block lh-lg">
+                                Địa chỉ:
+                                <br>
+                                Đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận 2, TP.HCM
+                            </p>
+                        </div>
+                        <article class="card-group">
+                            <figure class="card bg-light">
+                                <div class="p-3">
+                                    <h4 class="title">2</h4>
+                                    <span>Sản phẩm trong giỏ</span>
+                                </div>
+                            </figure>
+                            <figure class="card bg-light">
+                                <div class="p-3">
+                                    <h4 class="title">5</h4>
+                                    <span>Đơn hàng</span>
+                                </div>
+                            </figure>
+                            <figure class="card bg-light">
+                                <div class="p-3">
+                                    <h4 class="title">5</h4>
+                                    <span>Sản phẩm đang giao</span>
+                                </div>
+                            </figure>
+                            <figure class="card bg-light">
+                                <div class="p-3">
+                                    <h4 class="title">10</h4>
+                                    <span>Sản phẩm đã nhận</span>
+                                </div>
+                            </figure>
+                        </article>
+                    </div>
+                </article>
+                }
+                @case ('orders') {
+                <div class="table-responsive-xxl">
+                    <table class="table table-bordered table-striped table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="min-width: 125px;">Mã đơn hàng</th>
+                                <th scope="col" style="min-width: 100px;">Ngày mua</th>
+                                <th scope="col" style="min-width: 300px;">Sản phẩm</th>
+                                <th scope="col" style="min-width: 100px;">Tổng tiền</th>
+                                <th scope="col" style="min-width: 175px;">Trạng thái đơn hàng</th>
+                                <th scope="col">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>15/12/2021</td>
+                                <td>Tiếng Việt lớp 1</td>
+                                <td>10.000₫</td>
+                                <td><span class="badge bg-warning text-dark">Đang giao hàng</span></td>
+                                <td class="text-center text-nowrap">
+                                    <a class="btn btn-primary me-2" [routerLink]="['/view/order-detail']"
+                                        role="button">Xem đơn hàng</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>10/12/2021</td>
+                                <td>Tiếng Việt lớp 2 ...và 1 sản phẩm khác</td>
+                                <td>60.000₫</td>
+                                <td><span class="badge bg-danger">Hủy đơn hàng</span></td>
+                                <td class="text-center text-nowrap">
+                                    <a class="btn btn-primary me-2" [routerLink]="['/view/order-detail']"
+                                        role="button">Xem đơn hàng</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>10/12/2021</td>
+                                <td>Tiếng Việt lớp 2 ...và 1 sản phẩm khác</td>
+                                <td>60.000₫</td>
+                                <td><span class="badge bg-success">Giao hàng thành công</span></td>
+                                <td class="text-center text-nowrap">
+                                    <a class="btn btn-primary me-2" [routerLink]="['/view/order-detail']"
+                                        role="button">Xem đơn hàng</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav class="mt-4">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Trang trước</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Trang sau</a></li>
+                    </ul>
+                </nav>
+                }
+                @case ('favorites') {
+                <article class="card">
+                    <div class="card-body">
+                        <div class="row g-3">
+                            @for (item of getArray(3); track $index) {
+                            <div class="col-lg-6">
+                                <figure class="d-flex align-items-center m-0">
+                                    <div class="aside"><img src="../../../../assets/images/80px.png" width="80"
+                                            height="80"></div>
+                                    <figcaption class="ps-3">
+                                        <a href="" class="text-decoration-none">Tiếng Việt lớp 3</a>
+                                        <p class=" mb-2">
+                                            <span class="price">320.000₫</span>
+                                        </p>
+                                        <button type="button" class="btn btn-primary btn-sm">
+                                            Thêm vào giỏ hàng
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm ms-1" data-toggle="tooltip"
+                                            title="Xóa khỏi danh sách yêu thích"
+                                            data-original-title="Xóa khỏi danh sách yêu thích">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </article>
+                }
+                @case ('change-password') {
+                <article class="card">
+                    <div class="card-body">
+                        <div class="col-lg-6 mx-auto">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="inputCurrentPassword" class="form-label">
+                                        Nhập mật khẩu hiện tại
+                                    </label>
+                                    <input type="password" class="form-control" id="inputCurrentPassword">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputNewPassword" class="form-label">
+                                        Nhập mật khẩu mới
+                                    </label>
+                                    <input type="password" class="form-control" id="inputNewPassword">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputNewPasswordAgain" class="form-label">
+                                        Gõ lại mật khẩu mới
+                                    </label>
+                                    <input type="password" class="form-control" id="inputNewPasswordAgain">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Đổi mật khẩu</button>
+                            </form>
+                        </div>
+                    </div> <!-- card-body.// -->
+                </article>
+                }
+                @case ('info') {
+                <article class="card">
+                    <div class="card-body">
+                        <div class="col-lg-6 mx-auto">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="inputUsername" class="form-label">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" id="inputUsername">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputName" class="form-label">Họ tên</label>
+                                    <input type="text" class="form-control" id="inputName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputPhoneNumber" class="form-label">Số điện thoại</label>
+                                    <input type="number" class="form-control" id="inputPhoneNumber">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check d-inline-block me-4">
+                                        <input class="form-check-input" type="radio" name="radioGender"
+                                            id="radioGender1" checked>
+                                        <label class="form-check-label" for="radioGender1">Nam</label>
+                                    </div>
+                                    <div class="form-check d-inline-block">
+                                        <input class="form-check-input" type="radio" name="radioGender"
+                                            id="radioGender2">
+                                        <label class="form-check-label" for="radioGender2">Nữ</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputAddress" class="form-label">Địa chỉ</label>
+                                    <input type="text" class="form-control" id="inputAddress">
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Cập nhật thông tin mới</button>
+                            </form>
+                        </div>
+                    </div> <!-- card-body.// -->
+                </article>
+                }
+                @case ('order-detail') {
+                <article class="card mb-4">
+                    <header class="card-header">
+                        <strong class="d-inline-block me-4">Mã đơn hàng: 1</strong>
+                        <span>Ngày mua: 10/12/2021</span>
+                    </header>
+                    <div class="card-body pb-0">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h6 class="text-muted">Địa chỉ người nhận</h6>
+                                <p class="lh-lg">
+                                    Nguyễn Thị A <br>
+                                    Số điện thoại: 0919944382 <br>
+                                    Địa chỉ: Đường Nguyễn Duy Trinh, Phường Bình Trưng Đông, Quận 2, TP.HCM
+                                </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <h6 class="text-muted">Hình thức thanh toán</h6>
+                                <span class="text-success">
+                                    <i class="fab fa-lg fa-cc-visa"></i>
+                                    Giao tiêu chuẩn
+                                </span>
+                                <p class="lh-lg">
+                                    Tạm tính: 50.000₫ <br>
+                                    Phí vận chuyển: 10.000₫ <br>
+                                    <strong>Tổng cộng: 60.000₫</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="m-0">
+                    <div class="table-responsive">
+                        <table class="cart-table table table-borderless">
+                            <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th scope="col" style="min-width: 280px;">Sản phẩm</th>
+                                    <th scope="col" width="150" style="min-width: 150px;">Giá</th>
+                                    <th scope="col" width="150" style="min-width: 150px;">Số lượng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside">
+                                            <div class="float-start me-3"><img src="../../../../assets/images/80px.png">
+                                            </div>
+                                            <figcaption class="info">
+                                                <a href="#" class="title">Tiếng Việt lớp 1</a>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <span class="price">20.000₫</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        1
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside">
+                                            <div class="float-start me-3"><img src="../../../../assets/images/80px.png">
+                                            </div>
+                                            <figcaption class="info">
+                                                <a href="#" class="title">Tiếng Việt lớp 2</a>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <span class="price">30.000₫</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        1
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer py-3">
+                        <a href="#" class="btn btn-primary me-2">Theo dõi đơn hàng</a>
+                        <a href="#" class="btn btn-danger">Hủy đơn hàng</a>
+                    </div>
+                </article>
+                }
+                }
+            </main>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

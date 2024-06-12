@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  getArray(size: number) {
+    return new Array(size);
+  }
 }
