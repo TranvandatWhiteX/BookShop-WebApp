@@ -18,7 +18,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     CoreModule,
     AdminModule,
-    UserModule
+    UserModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

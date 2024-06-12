@@ -1,5 +1,5 @@
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -8,8 +8,4 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const AppRoutingModule: ModuleWithProviders<any> = RouterModule.forRoot(routes);
